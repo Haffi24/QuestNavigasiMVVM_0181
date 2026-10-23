@@ -7,7 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,19 +24,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             QuestNavigasiMVVM_0181Theme {
-                // Mendapatkan context dari Compose untuk Toast
-                val context = LocalContext.current
-
-                FormIsian(
-                    OnSubmitBtnClick = {
-                        // Aksi yang dijalankan saat tombol diklik
-                        Toast.makeText(
-                            context,
-                            "Data berhasil disubmit!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                )
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    DataApp()
+                }
             }
         }
     }
