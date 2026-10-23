@@ -1,5 +1,6 @@
 package com.example.questnavigasimvvm_0181.view
 
+import android.R.attr.thickness
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.questnavigasimvvm_0181.R
+
 
 @OptIn(ExperimentalStdlibApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -60,9 +62,20 @@ fun FormIsian(
                             selected = false,
                             onClick = {item},
                         )
+                        Text(text = item)
                     }
                 }
             }
+            HorizontalDivider(modifier = Modifier
+                .padding(20.dp)
+                .width(250.dp),
+                thickness = 1.dp,
+                color = Color.Red
+            )
+
+
+
+
         }
     }
 }
